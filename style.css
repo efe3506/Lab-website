@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --------------------index CSS-----------------------*/
+
+/* header basics */
+
+header{
+    height: 100px;
+    background-color: #FFFDF7;
+    box-shadow: 0px 8px 15px 5px rgba(0,0,0,0.3);
+    border-radius: 0 0 15px 15px;
+}
+
+/* navbar section - responsive */
+
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFFDF7;
+    padding: 15px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo{
+    margin-right: 50px;
+    font-size: larger;
+    font-weight: 900;
+    letter-spacing: -0.5;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.list li:hover{
+    color: rgba(0,0,0,0.5);
+}
+
+#toggler, .navbar label{
+    display: none;
+}
+
+/* hidden navbar limit & responsiveness */
+
+@media screen and (min-width: 900px){
+    .logo{
+        font-size: 30px;
+    }
+
+    .list{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 705px){
+    /* navbar */
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .logo {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .list{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+        background-color: #FFFDF7;
+        z-index: 1;
+        transition: 0.5s;
+        border-radius: 15px;
+    }
+}
+
+
+/* main section  */
+
+main{
+    display: flex;
+    justify-content: center;
+    background-color: #B8B29F;
+    border-radius: 15px 15px 0 0;
+    padding: 50px 0;
+    height: 100vh;
+}
+
+main .main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 25px;
+    background-image: url(national-cancer-institute-oCLuFi9GYNA-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #111;
+    /* opacity: 0.7; */
+    text-align: center;
+    box-shadow: 0px 0px 28px 10px rgba(0,0,0,0.65);
+    /* box-shadow: inset 0px 0px 28px 0px rgba(0,0,0,0.65); */
+}
+
+/* P,H2 ve OL NEDEN Z-INDEX VERMEME RAGMEN OPACITYDEN ETKILENIYOR  */
+main .main h2{
+    background-color: #DFDBCD;
+    border-radius: 25px;
+    z-index: 1;
+    opacity: 1;
+    padding: 20px 0;
+    font-weight: 400;
+}
+
+.prg p{
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+    background-color: #DFDBCD;
+    z-index: 1;
+    opacity: 1;
+}
+.prg ol{
+    text-align: justify;
+    background-color: #DFDBCD;
+    padding:5px 25px;
+    border-radius:0 0 15px 15px;
+    z-index: 1;
+    opacity: 1;
+}
+
+.prg{
+    display: flex;
+    justify-content: center;
+    margin: 10px 20% 10px;
+    text-align: justify;
+    padding-bottom: 20px;
+    line-height: 1.5em;
+    flex-direction: column;
+}
+
+/* main responsive */
+
+@media screen and (max-width: 705px){
+    main .main{
+        margin: 10px 10% 10px;
+    }
+    .prg{
+        margin: 10px 20% 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    
+    main .main{
+        margin: 10px 5% 10px
+    }
+    .prg{
+        margin: 10px 15% 10px;
+        height: auto;
+
+    }
+}
+
+/* footer css */
+
+footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: #706850;
+}
+
+.social{
+    width: 33.333%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    font-size: 35px;
+}
+
+.social a{
+    text-decoration: none;
+    color: #FFFDF7;
+}
+
+.social a i:hover{
+    padding: 15px;
+    background-color: #DFDBCD;
+    color: #706850;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.65);
+    transition: 0.5s;
+}
+
+/* responsiveness */
+
+@media screen and (max-width: 600px){
+
+    .social{
+        font-size: 25px;
+    }
+
+    .social a{
+        margin: 0 20px;
+    }
+}
+
+    
+    
+/* ---------------Contact CSS--------------------- */
+
+.contact{
+    border-radius: 25px;
+    width: 40%;
+    height: 500px;
+    margin: 0 25% 0;
+    padding: 15px;
+    background-color: #DFDBCD;
+    text-align: center;
+    box-shadow: 0px 0px 28px 10px rgba(0,0,0,0.65);
+}
+
+.contact p {
+    padding: 5px;
+}
+
+/* label / forms / button*/
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact label,input{
+    margin: 0 10% 0;
+    align-self: center;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+}
+
+#contact input, textarea{
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.65);
+}
+
+.contact textarea{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 15px;
+    align-self: center;
+    padding: 10px;
+    background-color: #FFFDF7;
+    border: none;
+    border-radius: 15px;
+    height: 150px;
+}
+
+.btn{
+    align-self: center;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #FFFDF7;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.65);
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgba(0,0,0,0.5);
+    color: #FFFDF7;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:active{
+    scale: (0.9);
+}
+
+/* contact responsiveness */
+
+@media screen and (max-width: 710px){
+
+    #contact textarea{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .contact{
+        font-size: smaller;
+        width: 65%;
+    }
+
+    .contact label,input{
+        padding: 10px 5px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .contact textarea{
+        padding: 10px 5px;
+        width:260px;
+        height: 150px;
+        text-align: center;
+    }
+
+    .btn{
+        font-size: smaller;
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 410px){
+    
+    #contact textarea{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .contact{
+        font-size: smaller;
+        width: 65%;
+    }
+
+    .contact label,input{
+        padding: 10px 5px;
+        width: 100px;
+        text-align: center;
+    }
+
+    .contact textarea{
+        padding: 10px 5px;
+        width:160px;
+        height: 100px;
+        text-align: center;
+    }
+
+    .btn{
+        font-size: smaller;
+        padding: 5px;
+    }
+}
+
+/* --------------------------------Software CSS------------------------------- */
+
+.sft{
+    display: flex;
+    justify-content: center;
+}
+
+.sft-d{
+    width: 700px;
+    height: 500px;
+    background-color: #DFDBCD;
+    border-radius: 25px;
+    box-shadow: 0px 0px 28px 10px rgba(0,0,0,0.65);
+}

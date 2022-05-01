@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- style link -->
+    <link rel="stylesheet" href="style.css">
+    <title>İletişim</title>
+</head>
+<body>
+    <!-- Header / Logo area / Navbar -->
+    <header>
+        <nav class="navbar">
+          <a href="" class="logo"><em>Lab.</em></a>
+          <input type="checkbox" id="toggler">
+          <label for="toggler"><i class="ri-menu-line"></i></label>
+          <div class="menu">
+            <ul class="list">
+              <li><a href="index.html">Araştırmalar</a></li>
+              <li><a href="members.html">Laboratuvar Üyeleri</a></li>
+              <li><a href="publishing.html">Yayınlar</a></li>
+              <li><a href="software.html">Yazılım</a></li>
+              <li><a href="#">İletişim</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- main -->
+      <main>
+          <div class="contact">
+              <p><strong>Telefon</strong>+90 312 222 58 26 / 2564-2558</p>
+              <p><strong>Faks</strong>+90 312 222 58 72</p>
+              <p><strong>Bize Yazın!</strong></p>
+              <form action="mailto:" enctype="text/plain" method="post" id="contact">
+
+                  <label for="isim">Adınız: </label>
+                  <input type="text" placeholder="İsim - Soyisim" required id="isim" name="isim">
+
+                  <label for="mail">Email adresiniz:</label>
+                  <input type="email" placeholder="Email" required id="mail" name="mail">
+
+                  <label for="yazi">Mesajınız: </label>
+                  <textarea name="yazi" id="yazi" cols="30" rows="10" placeholder="Mesajınızı buraya yazınız..."></textarea>
+                  <button class="btn" type="submit">Gönder !</button>
+              </form>
+          </div>
+      </main>
+
+      <!-- footer -->
+    <footer>
+      <div class="social">
+        <a href=""><i class="ri-instagram-line"></i></a>
+        <a href=""><i class="ri-twitter-line"></i></a>
+        <a href=""><i class="ri-whatsapp-line"></i></a>
+      </div>
+    </footer>
+</body>
+</html>
