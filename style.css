@@ -52,6 +52,7 @@ header{
 
 .list li:hover{
     color: rgba(0,0,0,0.5);
+    text-decoration: underline;
 }
 
 #toggler, .navbar label{
@@ -108,88 +109,134 @@ header{
 
 /* main section  */
 
-main{
-    display: flex;
-    justify-content: center;
-    background-color: #B8B29F;
-    border-radius: 15px 15px 0 0;
-    padding: 50px 0;
+main.welcome{
+    width: 100%;
     height: 100vh;
-}
-
-main .main{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
-    border-radius: 25px;
-    background-image: url(national-cancer-institute-oCLuFi9GYNA-unsplash.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #111;
-    /* opacity: 0.7; */
+    background-color: #DFDBCD;
     text-align: center;
-    box-shadow: 0px 0px 28px 10px rgba(0,0,0,0.65);
-    /* box-shadow: inset 0px 0px 28px 0px rgba(0,0,0,0.65); */
-}
-
-/* P,H2 ve OL NEDEN Z-INDEX VERMEME RAGMEN OPACITYDEN ETKILENIYOR  */
-main .main h2{
-    background-color: #DFDBCD;
-    border-radius: 25px;
-    z-index: 1;
-    opacity: 1;
-    padding: 20px 0;
-    font-weight: 400;
-}
-
-.prg p{
-    padding: 10px;
-    border-radius: 15px 15px 0 0;
-    background-color: #DFDBCD;
-    z-index: 1;
-    opacity: 1;
-}
-.prg ol{
-    text-align: justify;
-    background-color: #DFDBCD;
-    padding:5px 25px;
-    border-radius:0 0 15px 15px;
-    z-index: 1;
-    opacity: 1;
-}
-
-.prg{
     display: flex;
     justify-content: center;
-    margin: 10px 20% 10px;
-    text-align: justify;
-    padding-bottom: 20px;
-    line-height: 1.5em;
+    align-items: center;
     flex-direction: column;
+}
+
+main.welcome #heading{
+    padding-top: 40px;
+}
+
+.greeting{
+    width: 85%;
+    background: url(national-cancer-institute-oCLuFi9GYNA-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    margin: 50px auto;
+    padding: 25px;
+    box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.greeting p{
+    width: 85%;
+    margin: 0 auto;
+    padding: 25px 30px;
+    text-align: justify;
+    background-color: rgba(0,0,0,0.9);
+    color:#fff;
+    border-radius: 20px 20px 0 0;
+}
+
+.greeting ol{
+    width: 85%;
+    margin: 0 auto;
+    padding: 25px 30px;
+    list-style-position: inside;
+    text-align: justify;
+    background-color: rgba(0,0,0,0.9);
+    color:#fff;
+    border-radius: 0 0 20px 20px;
+}
+
+.greeting ol li{
+    margin: 10px 0;
+    padding: 5px;
 }
 
 /* main responsive */
 
-@media screen and (max-width: 705px){
-    main .main{
-        margin: 10px 10% 10px;
+@media screen and (max-width: 720px){
+    main.welcome #heading{
+        padding-top: 30px;
     }
-    .prg{
-        margin: 10px 20% 10px;
+    .greeting{
+        width: 90%;
+        height: 90%;
+        margin: 30px auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .greeting p{
+        width: 90%;
+        padding: 10px;
+    }
+
+    .greeting ol{
+        width: 90%;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .greeting ol li{
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 600px){
-    
-    main .main{
-        margin: 10px 5% 10px
+    main.welcome #heading{
+        padding-top: 20px;
     }
-    .prg{
-        margin: 10px 15% 10px;
-        height: auto;
+    .greeting{
+        width: 95%;
+        height: 90%;
+        margin: 20px auto;
+        padding: 5px;
+        font-size: 12px;
+    }
 
+    .greeting p{
+        width: 90%;
+        padding: 5px;
+    }
+
+    .greeting ol{
+        width: 90%;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .greeting ol li{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 310px){
+    main.welcome #heading{
+        padding-top: 10px;
+        font-size: 22px;
+    }
+    .greeting{
+        font-size: 10px;
+        margin: 5px auto;
+        border-radius: 15px;
+    }
+
+    .greeting p {
+        padding: 5px 10px;
+        border-radius: 10px;
     }
 }
 
@@ -260,37 +307,48 @@ footer{
 
 /* label / forms / button*/
 
-#contact{
+main{
+    background-color: #DFDBCD;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.contact label,input{
-    margin: 0 10% 0;
-    align-self: center;
-    padding: 10px;
-    border-radius: 15px;
-    border: none;
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
 }
 
-#contact input, textarea{
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.65);
+.contact form{
+    padding: 0 20px;
 }
 
-.contact textarea{
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 15px;
-    align-self: center;
-    padding: 10px;
-    background-color: #FFFDF7;
-    border: none;
-    border-radius: 15px;
-    height: 150px;
+.contact div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact div label{
+    margin: 5px;
+    padding: 2.5px;
+}
+
+.contact div input, .contact div textarea{
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 2px solid #FFFDF7;
+    outline: none;
 }
 
 .btn{
+    margin: 20px 0;
     align-self: center;
     border: none;
     border-radius: 15px;
@@ -314,12 +372,7 @@ footer{
 
 /* contact responsiveness */
 
-@media screen and (max-width: 710px){
-
-    #contact textarea{
-        margin-left: 0;
-        margin-right: 0;
-    }
+@media screen and (max-width: 720px){
 
     .contact{
         font-size: smaller;
@@ -345,20 +398,15 @@ footer{
     }
 }
 @media screen and (max-width: 410px){
-    
-    #contact textarea{
-        margin-left: 0;
-        margin-right: 0;
-    }
 
     .contact{
         font-size: smaller;
         width: 65%;
     }
 
-    .contact label,input{
+    .contact label, input{
         padding: 10px 5px;
-        width: 100px;
+        width: 120px;
         text-align: center;
     }
 
