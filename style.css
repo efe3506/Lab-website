@@ -1,155 +1,182 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
+
+  background: rgb(198, 189, 162);
+  background: radial-gradient(
+    circle,
+    rgba(198, 189, 162, 1) 0%,
+    rgba(255, 253, 247, 1) 100%
+  );
 }
 
 /* --------------------index CSS-----------------------*/
 
 /* header basics */
 
-header{
-    height: 100px;
-    background-color: #FFFDF7;
-    box-shadow: 0px 8px 15px 5px rgba(0,0,0,0.3);
-    border-radius: 0 0 15px 15px;
+header {
+  height: 100px;
+  background-color: #fffdf7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* navbar section - responsive */
 
-.navbar{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #FFFDF7;
-    padding: 15px;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fffdf7;
+  padding: 15px;
 }
 
-.navbar a{
-    text-decoration: none;
-    color: inherit;
+.navbar a {
+  text-decoration: none;
+  color: inherit !important;
 }
 
-.logo{
-    margin-right: 50px;
-    font-size: larger;
-    font-weight: 900;
-    letter-spacing: -0.5;
+.logo {
+  margin-right: 50px;
+  font-size: larger;
+  font-weight: 900;
+  letter-spacing: -0.5;
 }
 
-.list{
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-.list li:hover{
-    color: rgba(0,0,0,0.5);
-    text-decoration: underline;
+.list li:hover {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: underline;
 }
 
-#toggler, .navbar label{
-    display: none;
+#toggler,
+.navbar label {
+  display: none;
 }
 
 /* hidden navbar limit & responsiveness */
 
-@media screen and (min-width: 900px){
-    .logo{
-        font-size: 30px;
-    }
+@media screen and (min-width: 900px) {
+  .logo {
+    font-size: 30px;
+  }
 
-    .list{
-        font-size: 18px;
-    }
+  .list {
+    font-size: 18px;
+  }
 }
 
-@media screen and (max-width: 705px){
-    /* navbar */
-    .menu{
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-    }
+@media screen and (max-width: 705px) {
+  /* navbar */
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
 
-    .logo {
-        align-items: center;
-        justify-content: center;
-    }
+  .logo {
+    align-items: center;
+    justify-content: center;
+  }
 
-    .list{
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
+  .list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
 
-    .navbar label{
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-    #toggler:checked ~ .menu{
-        max-height: 100%;
-        background-color: #FFFDF7;
-        z-index: 1;
-        transition: 0.5s;
-        border-radius: 15px;
-    }
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+    background-color: #fffdf7;
+    z-index: 1;
+    transition: 0.5s;
+    border-radius: 15px;
+  }
 }
-
 
 /* main section  */
 
-main.welcome{
-    width: 100%;
-    height: 100vh;
-    background-color: #DFDBCD;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+main.welcome {
+  width: 100%;
+  height: 85vh;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
 }
 
-main.welcome #heading{
+.welcome-div{
+    width: 90%;
+}
+
+.welcome-div img{
+    width: 50%;
+}
+
+.arastirma{
+    border-color: #706850 !important;
+    outline: none !important;
+}
+
+.arastirma:hover{
+    background-color: #706850;
+    color: #fffdf7 !important;
+}
+
+.arastirma-content{
+    background-color: transparent !important;
+    border: none !important;
+}
+
+
+/* main.welcome #heading{
     padding-top: 40px;
 }
 
 .greeting{
     width: 85%;
-    background: url(national-cancer-institute-oCLuFi9GYNA-unsplash.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 25px;
     margin: 50px auto;
     padding: 25px;
     box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
-.greeting p{
+.greeting-text{
     width: 85%;
     margin: 0 auto;
     padding: 25px 30px;
     text-align: justify;
-    background-color: rgba(0,0,0,0.9);
-    color:#fff;
+    background-color: 
+    rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px 
+    rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    color:#222 !important;
     border-radius: 20px 20px 0 0;
-}
+} */
 
-.greeting ol{
+/* .greeting ol{
     width: 85%;
     margin: 0 auto;
     padding: 25px 30px;
@@ -158,282 +185,271 @@ main.welcome #heading{
     background-color: rgba(0,0,0,0.9);
     color:#fff;
     border-radius: 0 0 20px 20px;
-}
+} */
 
-.greeting ol li{
+/* .greeting ol li{
     margin: 10px 0;
     padding: 5px;
-}
+} */
 
 /* main responsive */
 
-@media screen and (max-width: 790px){
-    main.welcome #heading{
-        padding-top: 30px;
-    }
-    .greeting{
-        width: 90%;
-        height: 90%;
-        margin: 30px auto;
-        padding: 10px;
-        font-size: 14px;
-    }
+@media screen and (max-width: 790px) {
+  main.welcome #heading {
+    padding-top: 30px;
+  }
+  .greeting {
+    width: 90%;
+    height: 90%;
+    margin: 30px auto;
+    padding: 10px;
+    font-size: 14px;
+  }
 
-    .greeting p{
-        width: 90%;
-        padding: 10px;
-    }
+  .greeting p {
+    width: 90%;
+    padding: 10px;
+  }
 
-    .greeting ol{
-        width: 90%;
-        padding: 5px;
-        font-size: 14px;
-    }
+  .greeting ol {
+    width: 90%;
+    padding: 5px;
+    font-size: 14px;
+  }
 
-    .greeting ol li{
-        padding: 0;
-    }
+  .greeting ol li {
+    padding: 0;
+  }
 }
 
-@media screen and (max-width: 600px){
-    main.welcome #heading{
-        padding-top: 20px;
-    }
-    .greeting{
-        width: 95%;
-        height: 90%;
-        margin: 20px auto;
-        padding: 5px;
-        font-size: 12px;
-    }
+@media screen and (max-width: 600px) {
+  main.welcome #heading {
+    padding-top: 20px;
+  }
+  .greeting {
+    width: 95%;
+    height: 90%;
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 12px;
+  }
 
-    .greeting p{
-        width: 90%;
-        padding: 5px;
-    }
+  .greeting p {
+    width: 90%;
+    padding: 5px;
+  }
 
-    .greeting ol{
-        width: 90%;
-        padding: 5px;
-        font-size: 12px;
-    }
+  .greeting ol {
+    width: 90%;
+    padding: 5px;
+    font-size: 12px;
+  }
 
-    .greeting ol li{
-        padding: 0;
-    }
+  .greeting ol li {
+    padding: 0;
+  }
 }
 
-@media screen and (max-width: 310px){
-    main.welcome #heading{
-        padding-top: 10px;
-        font-size: 22px;
-    }
-    .greeting{
-        font-size: 10px;
-        margin: 5px auto;
-        border-radius: 15px;
-    }
+@media screen and (max-width: 310px) {
+  main.welcome #heading {
+    padding-top: 10px;
+    font-size: 22px;
+  }
+  .greeting {
+    font-size: 10px;
+    margin: 5px auto;
+    border-radius: 15px;
+  }
 
-    .greeting p {
-        padding: 5px 10px;
-        border-radius: 10px;
-    }
+  .greeting p {
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
 }
 
 /* footer css */
 
-footer{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100px;
-    background-color: #706850;
+footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background-color: #706850;
 }
 
-.social{
-    width: 33.333%;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    padding: 25px;
-    font-size: 35px;
+.social {
+  width: 33.333%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+  font-size: 35px;
 }
 
-.social a{
-    text-decoration: none;
-    color: #FFFDF7;
+.social a {
+  text-decoration: none;
+  color: #fffdf7;
 }
 
-.social a i:hover{
-    padding: 15px;
-    background-color: #DFDBCD;
-    color: #706850;
-    border-radius: 50%;
-    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.65);
-    transition: 0.5s;
+.social a i:hover {
+  padding: 15px;
+  background-color: #dfdbcd;
+  color: #706850;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.65);
+  transition: 0.5s;
 }
 
 /* responsiveness */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
+  .social {
+    font-size: 25px;
+  }
 
-    .social{
-        font-size: 25px;
-    }
-
-    .social a{
-        margin: 0 20px;
-    }
+  .social a {
+    margin: 0 20px;
+  }
 }
 
-    
-    
 /* ---------------Contact CSS--------------------- */
 
-.contact{
-    border-radius: 25px;
-    width: 40%;
-    height: 500px;
-    margin: 0 25% 0;
-    padding: 15px;
-    background-color: #DFDBCD;
-    text-align: center;
-    box-shadow: 0px 0px 28px 10px rgba(0,0,0,0.65);
+.contact {
+  border-radius: 25px;
+  width: 40%;
+  height: 500px;
+  margin: 0 25% 0;
+  padding: 15px;
+  background-color: #dfdbcd;
+  text-align: center;
+  box-shadow: 0px 0px 28px 10px rgba(0, 0, 0, 0.65);
 }
 
 .contact p {
-    padding: 5px;
+  padding: 5px;
 }
 
 /* label / forms / button*/
 
-main{
-    background-color: #DFDBCD;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+main {
+  background-color: #dfdbcd;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5% auto;
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5% auto;
 }
 
-.contact form{
-    padding: 0 20px;
+.contact form {
+  padding: 0 20px;
 }
 
-.contact div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.contact div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.contact div label{
-    margin: 5px;
-    padding: 2.5px;
+.contact div label {
+  margin: 5px;
+  padding: 2.5px;
 }
 
-.contact div input, .contact div textarea{
-    padding: 5px 15px;
-    border-radius: 10px;
-    border: 2px solid #FFFDF7;
-    outline: none;
+.contact div input,
+.contact div textarea {
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 2px solid #fffdf7;
+  outline: none;
 }
 
-.btn{
-    margin: 20px 0;
-    align-self: center;
-    border: none;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: #FFFDF7;
-    font-weight: 600;
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.65);
-    cursor: pointer;
+/* .btn {
+  margin: 20px 0;
+  align-self: center;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #fffdf7;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.65);
+  cursor: pointer;
 }
 
-.btn:hover{
-    background-color: rgba(0,0,0,0.5);
-    color: #FFFDF7;
-    border-radius: 5px;
-    transition: 0.3s;
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fffdf7;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.btn:active{
-    scale: (0.9);
-}
+.btn:active {
+  scale: (0.9);
+} */
 
 /* contact responsiveness */
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 720px) {
+  .contact {
+    font-size: smaller;
+    width: 65%;
+  }
 
-    .contact{
-        font-size: smaller;
-        width: 65%;
-    }
+  .contact label,
+  input {
+    padding: 10px 5px;
+    width: 200px;
+    text-align: center;
+  }
 
-    .contact label,input{
-        padding: 10px 5px;
-        width: 200px;
-        text-align: center;
-    }
+  .contact textarea {
+    padding: 10px 5px;
+    width: 260px;
+    height: 150px;
+    text-align: center;
+  }
 
-    .contact textarea{
-        padding: 10px 5px;
-        width:260px;
-        height: 150px;
-        text-align: center;
-    }
-
-    .btn{
-        font-size: smaller;
-        padding: 10px;
-    }
+  .btn {
+    font-size: smaller;
+    padding: 10px;
+  }
 }
-@media screen and (max-width: 410px){
+@media screen and (max-width: 410px) {
+  .contact {
+    font-size: smaller;
+    width: 65%;
+  }
 
-    .contact{
-        font-size: smaller;
-        width: 65%;
-    }
+  .contact label,
+  input {
+    padding: 10px 5px;
+    width: 120px;
+    text-align: center;
+  }
 
-    .contact label, input{
-        padding: 10px 5px;
-        width: 120px;
-        text-align: center;
-    }
+  .contact textarea {
+    padding: 10px 5px;
+    width: 160px;
+    height: 100px;
+    text-align: center;
+  }
 
-    .contact textarea{
-        padding: 10px 5px;
-        width:160px;
-        height: 100px;
-        text-align: center;
-    }
-
-    .btn{
-        font-size: smaller;
-        padding: 5px;
-    }
+  .btn {
+    font-size: smaller;
+    padding: 5px;
+  }
 }
 
 /* --------------------------------Software CSS------------------------------- */
 
-.sft{
-    display: flex;
-    justify-content: center;
-}
 
-.sft-d{
-    width: 700px;
-    height: 500px;
-    background-color: #DFDBCD;
-    border-radius: 25px;
-    box-shadow: 0px 0px 28px 10px rgba(0,0,0,0.65);
-}
